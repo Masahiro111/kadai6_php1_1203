@@ -24,7 +24,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/survey', [SurveyController::class, 'create'])->name('survey.create');
+    Route::get('/survey/create', [SurveyController::class, 'create'])->name('survey.create');
+    Route::post('/survey', [SurveyController::class, 'store'])->name('survey.store');
+    Route::get('/survey/{survey}', [SurveyController::class, 'show'])->name('survery.show');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
