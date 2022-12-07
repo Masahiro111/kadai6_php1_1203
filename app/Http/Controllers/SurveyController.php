@@ -24,9 +24,12 @@ class SurveyController extends Controller
             'description' => 'required',
         ]);
 
-        $survey = Survey::query()->create($validated + [
-            'user_id' => auth()->id(),
-        ]);
+        $survey = Survey::query()
+            ->create(
+                $validated + [
+                    'user_id' => auth()->id(),
+                ]
+            );
 
         return redirect()->route('survery.show', $survey);
     }
