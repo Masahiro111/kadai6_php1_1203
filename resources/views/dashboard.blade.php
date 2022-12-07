@@ -12,7 +12,7 @@
                     {{ __("You're logged in!") }}
                     <br>
                     <a
-                       class=""
+                       class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
                        href="{{ route('survey.create') }}">Create a Survey</a>
 
                 </div>

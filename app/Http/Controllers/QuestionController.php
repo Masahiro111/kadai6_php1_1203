@@ -15,10 +15,10 @@ class QuestionController extends Controller
     public function store(Survey $survey, Request $request)
     {
         $validated = $request->validate([
-            'question' => 'required',
+            'question.question' => 'required',
         ]);
 
-        $question = $survey->questions()->create($validated);
+        $question = $survey->questions()->create($validated['question']);
 
         return redirect()->route('survey.show', $survey);
     }

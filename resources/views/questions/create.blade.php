@@ -16,10 +16,11 @@
                             <p>{{ __("Page Survey") }}</p>
                             <div class="bg-white flex flex-col md:mr-auto w-full md:py-8 mt-8 md:mt-0">
                                 <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">質問</h2>
+
                                 <div class="relative mb-4">
                                     <label for="question" class="leading-7 text-sm text-gray-600">質問</label>
-                                    <input type="text" id="question" name="question" value="{{ old('question') }}" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                                    @error('question')
+                                    <input type="text" id="question" name="question[question]" value="{{ old('question') }}" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                    @error('question.question')
                                     <small class="text-red-500">{{ $message }}</small>
                                     @enderror
                                 </div>

@@ -31,6 +31,6 @@ class SurveyController extends Controller
                 ]
             );
 
-        return redirect()->route('survery.show', $survey);
+        return redirect()->route('survey.show', $survey);
     }
 }
