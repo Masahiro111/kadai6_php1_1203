@@ -28,12 +28,20 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <h2>{{ $question->question }}</h2>
+                    <h2>
+                        <p>{{ $question->question }}</p>
+                        <p>{{ $question->responses->count() > 0 ? $question->responses->count() : '投票なし'}}</p>
+                    </h2>
                     @if(sizeof($question->answers) == 0)
                     <div>設定なし</div>
                     @else
                     @foreach ($question->answers as $answer)
                     <p>{{ $answer->answer }}</p>
+
+                    @if ($question->responses->count() > 0)
+                    <p>{{ intval($answer->responses->count() * 100 / $question->responses->count()) }}%</p>
+                    @endif
+
                     @endforeach
                     @endif
                 </div>
