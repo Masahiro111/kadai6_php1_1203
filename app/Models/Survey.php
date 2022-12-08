@@ -29,4 +29,9 @@ class Survey extends Model
     {
         return $this->hasMany(SurveyCompilation::class);
     }
+
+    public function publicUrl()
+    {
+        return url('/survey/take/' . $this->id . '-' .  $this->title);
+    }
 }
