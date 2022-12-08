@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Question;
 use App\Models\Survey;
 use Illuminate\Http\Request;
 
@@ -22,6 +23,15 @@ class QuestionController extends Controller
         $question = $survey->questions()->create($validated['question']);
 
         $question->answers()->createMany($validated['answers']);
+
+        return redirect()->route('survey.show', $survey);
+    }
+
+    public function delete(Survey $survey, Question $question)
+    {
+        $question->responses()->delete();
+        $question->answers()->delete();
+        $question->delete();
 
         return redirect()->route('survey.show', $survey);
     }

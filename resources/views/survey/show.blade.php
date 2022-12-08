@@ -37,13 +37,19 @@
                     @else
                     @foreach ($question->answers as $answer)
                     <p>{{ $answer->answer }}</p>
-
                     @if ($question->responses->count() > 0)
                     <p>{{ intval($answer->responses->count() * 100 / $question->responses->count()) }}%</p>
                     @endif
-
                     @endforeach
                     @endif
+
+                    <div>
+                        <form action="{{ route('question.delete', [$survey,$question]) }}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit">delete</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
