@@ -19,8 +19,21 @@
 
                                 <div class="relative mb-4">
                                     <label for="question" class="leading-7 text-sm text-gray-600">質問</label>
-                                    <input type="text" id="question" name="question[question]" value="{{ old('question') }}" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                    <input
+                                           type="text"
+                                           id="question"
+                                           name="question[question]"
+                                           value="{{ old('question.question') }}"
+                                           class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                                     @error('question.question')
+                                    <small class="text-red-500">{{ $message }}</small>
+                                    @enderror
+                                </div>
+
+                                <div class="relative mb-4">
+                                    <label for="answer" class="leading-7 text-sm text-gray-600">答え</label>
+                                    <input type="text" id="answer" name="answers[][answer]" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                    @error('answers.0.answer')
                                     <small class="text-red-500">{{ $message }}</small>
                                     @enderror
                                 </div>

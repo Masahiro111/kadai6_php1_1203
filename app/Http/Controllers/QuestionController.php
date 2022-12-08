@@ -16,9 +16,12 @@ class QuestionController extends Controller
     {
         $validated = $request->validate([
             'question.question' => 'required',
+            'answers.*.answer' => 'required',
         ]);
 
         $question = $survey->questions()->create($validated['question']);
+
+        $question->answers()->createMany($validated['answers']);
 
         return redirect()->route('survey.show', $survey);
     }
