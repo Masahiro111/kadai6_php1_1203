@@ -38,6 +38,22 @@
                                     @enderror
                                 </div>
 
+                                <div class="relative mb-4">
+                                    <label for="answer" class="leading-7 text-sm text-gray-600">答え</label>
+                                    <input type="text" id="answer" name="answers[][answer]" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                    @error('answers.1.answer')
+                                    <small class="text-red-500">{{ $message }}</small>
+                                    @enderror
+                                </div>
+
+                                <div class="relative mb-4">
+                                    <label for="answer" class="leading-7 text-sm text-gray-600">答え</label>
+                                    <input type="text" id="answer" name="answers[][answer]" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                    @error('answers.2.answer')
+                                    <small class="text-red-500">{{ $message }}</small>
+                                    @enderror
+                                </div>
+
                                 <button
                                         type="submit"
                                         class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Add Question</button>
