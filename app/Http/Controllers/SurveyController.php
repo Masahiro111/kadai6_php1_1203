@@ -39,7 +39,7 @@ class SurveyController extends Controller
         return view('survey.take', compact('survey'));
     }
 
-    public function takeStore(Survey $survey, $slug)
+    public function takeStore(Survey $survey)
     {
         // dd(request()->all());
 
@@ -51,6 +51,11 @@ class SurveyController extends Controller
             'responses.*.answer_id' => 'required',
         ]);
 
-        dd($validated);
+        // dd($validated);
+
+        $surveyCompilation = $survey->surveyCompilations()->create($validated['info']);
+        $surveyCompilation->responses()->createMany($validated['responses']);
+
+        return view('survey.thank-you');
     }
 }
