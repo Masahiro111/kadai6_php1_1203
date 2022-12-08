@@ -31,6 +31,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/survey/{survey}/questions/create', [QuestionController::class, 'create'])->name('question.create');
     Route::post('/survey/{survey}/questions', [QuestionController::class, 'store'])->name('question.store');
 
+    Route::get('/survey/take/{survey}-{slug}', [SurveyController::class, 'take'])->name('survey.take');
+    Route::post('/survey/take/{survey}-{slug}', [SurveyController::class, 'takeStore'])->name('survey.takeStore');
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

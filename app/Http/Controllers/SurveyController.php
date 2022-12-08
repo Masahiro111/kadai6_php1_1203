@@ -33,4 +33,24 @@ class SurveyController extends Controller
 
         return redirect()->route('survey.show', $survey);
     }
+
+    public function take(Survey $survey, $slug)
+    {
+        return view('survey.take', compact('survey'));
+    }
+
+    public function takeStore(Survey $survey, $slug)
+    {
+        // dd(request()->all());
+
+        $validated = request()->validate([
+            'info.name' => 'required',
+            'info.email' => 'required|email',
+
+            'responses.*.question_id' => 'required',
+            'responses.*.answer_id' => 'required',
+        ]);
+
+        dd($validated);
+    }
 }
