@@ -11,7 +11,7 @@
                 <div class="p-6 text-gray-900">
                     <h3>Question : {{ $survey->title }}</h3>
 
-                    <form action="/survey/take/{{ $survey->id . '-' . $survey->title }}" method="POST">
+                    <form action="{{ env('APP_URL') }}/survey/take/{{ $survey->id . '-' . $survey->title }}" method="POST">
                         @csrf
 
                         <div class="bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
