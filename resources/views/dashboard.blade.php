@@ -13,7 +13,7 @@
                     <div class="-ml-4 -mt-4 flex flex-wrap items-center justify-between sm:flex-nowrap">
                         <div class="ml-4 mt-4">
                             <h3 class="text-lg font-medium leading-6 text-gray-900">アンケート一覧</h3>
-                            <p class="mt-1 text-sm text-gray-500">アンケートの一覧をご覧いただけます。新規にアンケートを追加する場合は 「新規アンケート追加」 ボタンを押してください。</p>
+                            {{-- <p class="mt-1 text-sm text-gray-500">アンケートの一覧をご覧いただけます。新規にアンケートを追加する場合は 「新規アンケート追加」 ボタンを押してください。</p> --}}
                         </div>
                         <div class="ml-4 mt-4 flex-shrink-0">
                             <a
@@ -65,53 +65,6 @@
             </div>
         </div>
     </div>
-
-
-    {{--
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    <a
-                       class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-                       href="{{ route('survey.create') }}">新規にアンケートを作成</a>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    <h1></h1>
-                    <ul>
-                        @foreach ($surveys as $survey)
-                        <li>
-                            <div>
-                                <small>{{ $survey->created_at }}</small>
-                                <h4> {{ $survey->title }} </h4>
-                                <p>{{ $survey->description }}</p>
-                                <a
-                                   class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-                                   href="{{ route('survey.show', $survey) }}">Edit</a>
-                            </div>
-                            <div>
-                                <div>Share Link</div>
-                                <a
-                                   href="{{ $survey->publicUrl() }}">{{ $survey->publicUrl() }}</a>
-                            </div>
-                        </li>
-
-                        @endforeach
-                    </ul>
-
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
 
 
 
