@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    $surveys = auth()->user()->surveys;
+    $surveys = auth()->user()->surveys()->latest()->get();
     return view('dashboard', compact('surveys'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 

@@ -7,12 +7,12 @@
 ・登録したユーザーで自由にアンケートを作成できるところ  
   
 ## ③ 難しかった点・次回トライしたいこと(又は機能)  
-・アプリとしては作成途中です (´;ω;｀)  
+・アプリとしては未完成です (´;ω;｀)  
 ・ラジオボタン以外のアンケートをしてみたかった  
   
 ## ④ 質問・疑問・感想、シェアしたいこと等なんでも
 YouTube  
-Laravel 1/14 - Presentazione Progetto Survey  
+Laravel - Presentazione Progetto Survey  
 https://www.youtube.com/watch?v=u70vqH2i1pQ  
   
 **Arrown**  
